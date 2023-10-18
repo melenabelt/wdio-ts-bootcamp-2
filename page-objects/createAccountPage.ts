@@ -1,11 +1,33 @@
 import { $ } from '@wdio/globals'
 import Page from './page';
 
-export class createAccountPage extends Page {
+export class CreateAccountPage extends Page {
 
     LOCATOR = (fileName: string) => `//)[${fileName}]`
     public get input(){ return $("")}
 
+    // Elena
+    public get accountAndList() {
+        return $('#nav-link-accountList')
+    }
+
+    public get createAccountBtn() {
+        return $('#createAccountSubmit')
+    }
+
+    public get continueBtn() {
+        return $('#continue')
+    }
+
+    public get EntOTPInput() {
+        return $('input#cvf-input-code')
+    }
+
+    public get verifyOTPBtn() {
+        return $('span[id="cvf-submit-otp-button"] input')
+    }
+
+    // Santi
     public get startHere() {
         return $('(// * [contains (text (), "Start here")])[2]');
     }
@@ -43,4 +65,4 @@ export class createAccountPage extends Page {
     }
 }
 
-export default new createAccountPage();
+export default new CreateAccountPage();
