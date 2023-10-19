@@ -15,4 +15,8 @@ export class SigninTask extends SigninPage {
         await this.passwordInput.setValue(password)
         await this.submitSigninBtn.click()
     }
+
+    scrollToFooter() {
+        this.preFooterContainer.scrollIntoView()
+    }
 }
