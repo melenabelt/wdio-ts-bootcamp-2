@@ -41,5 +41,3 @@ Then(/^The user receives an error message for missing field$/, async () => {
 Then(/^The user receives an error message for existing email$/, async () => {
     await expect(createAccountPage.existingEmailError.exist)
 })
-
-

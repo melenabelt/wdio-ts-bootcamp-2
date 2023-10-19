@@ -34,6 +34,3 @@ Feature: Create a new Amazon account
         Given The user enters the Amazon page
         When The user enters the name, existing email and password from header
         Then The user receives an error message for existing email
-
-    
-
