@@ -20,4 +20,8 @@ export class CreateAccountTask extends CreateAccountPage{
     public async clickCreateAccountFooter() {
         await this.startHereFooter.click()
     }
+
+    public async clickContinueButton() {
+        await this.continueBtn.click()
+    }
 }

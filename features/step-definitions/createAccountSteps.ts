@@ -1,7 +1,6 @@
 import { Given, When, Then, After } from '@wdio/cucumber-framework';
 import { CreateAccountPage } from '../../page-objects/createAccountPage';
 import { CreateAccountTask } from '../tasks/createAccountTask';
-import { SigninTask } from '../tasks/signinTask';
 
 import { expect } from 'chai';
 
@@ -15,19 +14,19 @@ Given(/^The user enters the Amazon page$/, async () => {
 When(/^The user enters the correct name, email and password from header$/, async () => {
     await createAccountTask.clickCreateAccStartHereHeader();
     await createAccountTask.amazonCreateAccount("Elenis", "elenitavargas123@gmail.com", "elenitasiempreviva")
-    await createAccountPage.continueBtn.click()
+    await createAccountTask.clickContinueButton();
 })
 
 When(/^The user don't enter name, email or password from header$/, async () => {
     await createAccountTask.clickCreateAccStartHereHeader();
     await createAccountTask.amazonCreateAccount("Elenis", "", "elenitasiempreviva")
-    await createAccountPage.continueBtn.click()
+    await createAccountTask.clickContinueButton();
 })
 
 When(/^The user enters the name, existing email and password from header$/, async () => {
     await createAccountTask.clickCreateAccStartHereHeader();
     await createAccountTask.amazonCreateAccount("Ele", "helloelenacorrea@gmail.com", "helloelena1234")
-    await createAccountPage.continueBtn.click()
+    await createAccountTask.clickContinueButton();
 })
 
 Then(/^OTP field is present$/, async () => {
