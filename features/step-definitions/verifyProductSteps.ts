@@ -1,10 +1,9 @@
-import { $ } from '@wdio/globals'
-
 import { Given, When, Then, After } from '@wdio/cucumber-framework';
 import { VerifyProductPage } from '../../page-objects/verifyProductPage';
 import { VerifyProductTask } from '../tasks/verifyProductTask';
 
 import { assert, expect } from 'chai';
+
 
 const verifyProductPage = new VerifyProductPage()
 const verifyProductTask = new VerifyProductTask()
@@ -48,7 +47,7 @@ When(/^The user looks for right column$/, async () => {
     await expect(verifyProductPage.rightColumn.exist)
 })
 
-Then(/^total price is equals to 912.69$/, async () => {
+Then(/^sum of price and import fees is equals to total price$/, async () => {
     // Price
     const numFullPrice = await verifyProductTask.getFullPrice()
 
@@ -59,6 +58,10 @@ Then(/^total price is equals to 912.69$/, async () => {
     const totalPrice = numFullPrice + numImportFees
 
     console.log('Total Price:', totalPrice);
+    
+    // Full price to float
 
-    await expect(totalPrice).to.eql(912.69)
+    const finalPrice = await verifyProductTask.getDetailsFinalPrice()
+
+    await expect(totalPrice).to.eql(finalPrice)
 })

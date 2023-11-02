@@ -49,8 +49,16 @@ export class VerifyProductPage {
         return $('#apex_offerDisplay_single_desktop #amazonGlobal_feature_div > span.a-color-secondary')
     }
 
-    public get totalPrice() {
-        return $('#sims-consolidated-1_feature_div span.a-size-medium.a-color-base._p13n-desktop-sims-fbt_fbt-desktop_total-amount__wLVdU')
+    public get detailsButton() {
+        return $('#rightCol #amazonGlobal_feature_div a span.a-size-base')
+    }
+
+    public get detailsPop() {
+        return $('#a-popover-3')
+    }
+
+    public get finalPrice() {
+        return $('#a-popover-content-2  tr:nth-child(5) > td.a-span2.a-text-right > span')
     }
 
     public open () {

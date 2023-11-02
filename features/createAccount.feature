@@ -1,3 +1,5 @@
+@create-account
+
 Feature: Create a new Amazon account
 
     Scenario: The unregistered user creates a new account from header using right data

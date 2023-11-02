@@ -1,3 +1,4 @@
+@verify-product
 Feature: Verify GALAX GeForce RTX™ 4070 product characteristics
 
     Scenario: Product description has 5 bullets
@@ -23,4 +24,4 @@ Feature: Verify GALAX GeForce RTX™ 4070 product characteristics
     Scenario: Total price is price + import fees
         Given The user enters Product page
         When The user looks for right column
-        Then total price is equals to 912.69
+        Then sum of price and import fees is equals to total price
