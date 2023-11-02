@@ -1,0 +1,5 @@
+"Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
+"","API: User retrieves information from an API","","0","0","5","0","0"
+"","API: User updates an existing resource through the API","","0","0","6","0","0"
+"","API: User creates a new resource through the API","","0","0","5","0","0"
+"","API: User deletes a resource through the API","","0","0","5","0","0"

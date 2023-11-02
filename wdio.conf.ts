@@ -142,6 +142,7 @@ export const config: Options.Testrunner = {
       "./features/step-definitions/signinSteps.ts",
       "./features/step-definitions/createAccountSteps.ts",
       "./features/step-definitions/verifyProductSteps.ts",
+      "./features/step-definitions/apiSteps.ts"
     ],
     // <boolean> show full backtrace for errors
     backtrace: false,
@@ -158,7 +159,7 @@ export const config: Options.Testrunner = {
     // <boolean> fail if there are any undefined or pending steps
     strict: false,
     // <string> (expression) only execute the features or scenarios with tags matching the expression
-    tags: '',  
+    tags: '@api',  
     // tags: '@create-account @sign-in @verify-product @only @api',
     // <number> timeout for step definitions
     timeout: 60000,
