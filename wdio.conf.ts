@@ -164,21 +164,6 @@ export const config: Options.Testrunner = {
     ignoreUndefinedDefinitions: false,
   },
 
-  afterTest(test, context, { error, result, duration, passed, retries }) {
-    if (error) {
-      browser.takeScreenshot(); // Captura una captura de pantalla en caso de error
-    }
-  },
-
-  onComplete() {
-    // Genera informes Allure después de la ejecución
-    const allure = require("allure-commandline");
-    const generation = allure(["generate", "allure-results"]);
-    generation.on("exit", function (exitCode: any) {
-      console.log("Se han generado los informes Allure con éxito");
-    });
-  },
-
   //
   // =====
   // Hooks
