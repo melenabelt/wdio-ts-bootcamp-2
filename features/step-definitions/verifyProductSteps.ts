@@ -2,8 +2,7 @@ import { Given, When, Then, After } from '@wdio/cucumber-framework';
 import { VerifyProductPage } from '../../page-objects/verifyProductPage';
 import { VerifyProductTask } from '../tasks/verifyProductTask';
 
-import { assert, expect } from 'chai';
-
+import { expect } from 'chai';
 
 const verifyProductPage = new VerifyProductPage()
 const verifyProductTask = new VerifyProductTask()
@@ -48,6 +47,7 @@ When(/^The user looks for right column$/, async () => {
 })
 
 Then(/^sum of price and import fees is equals to total price$/, async () => {
+
     // Price
     const numFullPrice = await verifyProductTask.getFullPrice()
 

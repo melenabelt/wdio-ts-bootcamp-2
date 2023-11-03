@@ -139,9 +139,7 @@ export const config: Options.Testrunner = {
   cucumberOpts: {
     // <string[]> (file/dir) require files before executing features
     require: [
-      "./features/step-definitions/signinSteps.ts",
-      "./features/step-definitions/createAccountSteps.ts",
-      "./features/step-definitions/verifyProductSteps.ts",
+      "./features/step-definitions/*Steps.ts",
     ],
     // <boolean> show full backtrace for errors
     backtrace: false,

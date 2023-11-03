@@ -1,6 +1,4 @@
-import verifyProductPage, {
-  VerifyProductPage,
-} from "../../page-objects/verifyProductPage";
+import {VerifyProductPage} from "../../page-objects/verifyProductPage";
 
 export class VerifyProductTask extends VerifyProductPage {
   public async getDescBullets() {
