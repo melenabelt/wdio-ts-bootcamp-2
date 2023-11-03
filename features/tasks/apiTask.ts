@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 export class ApiTask {
     apiURL = "https://jsonplaceholder.typicode.com/posts"
 

@@ -1,8 +1,6 @@
 import { Given, When, Then } from '@wdio/cucumber-framework';
 
-// Resto de tu código
-
-import { assert, expect } from 'chai';
+import { expect } from 'chai';
 import { ApiTask } from '../tasks/apiTask';
 
 const apiTask = new ApiTask()
