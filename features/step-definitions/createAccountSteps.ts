@@ -1,7 +1,6 @@
 import { Given, When, Then, After } from '@wdio/cucumber-framework';
 import { CreateAccountPage } from '../../page-objects/createAccountPage';
 import { CreateAccountTask } from '../tasks/createAccountTask';
-import { SigninTask } from '../tasks/signinTask';
 
 import { expect } from 'chai';
 
@@ -41,5 +40,3 @@ Then(/^The user receives an error message for missing field$/, async () => {
 Then(/^The user receives an error message for existing email$/, async () => {
     await expect(createAccountPage.existingEmailError.exist)
 })
-
-
