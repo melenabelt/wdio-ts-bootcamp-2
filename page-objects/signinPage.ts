@@ -3,9 +3,6 @@ import Page from './page';
 
 export class SigninPage extends Page {
 
-    LOCATOR = (fileName: string) => `//)[${fileName}]`
-    public get input(){ return $("")}
-
     public get signinHeader() {
         return $('#nav-link-accountList')
     }
