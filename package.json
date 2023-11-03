@@ -13,6 +13,9 @@
     "webdriverio": "^8.16.20"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.ts"
+    "wdio": "wdio run ./wdio.conf.ts",
+    "report-open": "allure open allure-report",
+    "pretest": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs",
+    "test": "npm run pretest && npx wdio wdio.conf.ts"
   }
 }

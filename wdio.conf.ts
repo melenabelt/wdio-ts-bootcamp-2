@@ -141,7 +141,7 @@ export const config: Options.Testrunner = {
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
         require: [
-        './features/step-definitions/signinSteps.ts', './features/step-definitions/createAccountSteps.ts', './features/step-definitions/verifyProductSteps.ts', 
+        './features/step-definitions/*Steps.ts', 
         ],
         // <boolean> show full backtrace for errors
         backtrace: false,
@@ -164,6 +164,21 @@ export const config: Options.Testrunner = {
         // <boolean> Enable this config to treat undefined definitions as warnings.
         ignoreUndefinedDefinitions: false
     },
+
+    afterTest(test, context, { error, result, duration, passed, retries }) {
+        if (error) {
+          browser.takeScreenshot(); // Captures a screenshot in case there's an error
+        }
+      },
+    
+      onComplete() {
+        // Generate allure reports after execution
+        const allure = require("allure-commandline");
+        const generation = allure(["generate", "allure-results"]);
+        generation.on("exit", function (exitCode: any) {
+          console.log("Allure reports were succesfully generated");
+        });
+      },
     
     //
     // =====
