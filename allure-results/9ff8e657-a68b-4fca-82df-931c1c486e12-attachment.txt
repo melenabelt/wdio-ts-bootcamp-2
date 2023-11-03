@@ -1,3 +1,0 @@
-{
-  "url": "https://www.amazon.com/-/es/ref=nav_logo?language=es_US"
-}
