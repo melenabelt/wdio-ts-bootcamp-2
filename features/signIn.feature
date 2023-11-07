@@ -1,3 +1,5 @@
+@sign-in
+
 Feature: Sign-in to Amazon 
 
     Scenario: The registered user signs in from header using right data
