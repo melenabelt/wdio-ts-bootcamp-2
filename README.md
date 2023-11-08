@@ -46,10 +46,6 @@ It will then execute the tests using the configuration defined in wdio.conf.ts.
 
 If you need to make changes to the test configuration, you can edit the wdio.conf.ts file in the project's root directory.
 
-## Contributions
-
-If you'd like to contribute to this project, feel free to fork it and submit your pull requests.
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
