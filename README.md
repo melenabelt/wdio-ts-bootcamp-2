@@ -36,11 +36,11 @@ npm run test
 
 This command will perform the following actions before running the tests:
 
-Clear previous test results.
-Remove the previous Allure report.
-Delete previous test screenshots.
-Clean up previous WDIO logs.
-It will then execute the tests using the configuration defined in wdio.conf.ts.
+- Clear previous test results.
+- Remove the previous Allure report.
+- Delete previous test screenshots.
+- Clean up previous WDIO logs.
+- It will then execute the tests using the configuration defined in wdio.conf.ts.
 
 ## Additional Configuration
 
