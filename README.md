@@ -12,16 +12,19 @@ Before running the tests, make sure you have Node.js and NPM installed on your s
 
    ```shell
    git clone https://github.com/melenabelt/wdio-ts-bootcamp-2/
+   ```
 
 2. Navigate to the project directory:
 
    ```shell
    cd DIRECTORY_NAME
+   ```
 
 3. Install project dependencies:
 
    ```shell
    npm install
+   ```
 
 ## Running the Tests
 
@@ -29,6 +32,7 @@ Before running the tests, make sure you have Node.js and NPM installed on your s
 
 ```shell
 npm run test
+```
 
 This command will perform the following actions before running the tests:
 
@@ -48,4 +52,4 @@ If you'd like to contribute to this project, feel free to fork it and submit you
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+[MIT](https://choosealicense.com/licenses/mit/)
