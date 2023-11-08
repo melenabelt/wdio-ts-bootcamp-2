@@ -158,7 +158,7 @@ export const config: Options.Testrunner = {
     // <boolean> fail if there are any undefined or pending steps
     strict: false,
     // <string> (expression) only execute the features or scenarios with tags matching the expression
-    tags: '@sign-in',  
+    tags: '',  
     // tags: '@create-account @sign-in @verify-product @only @api',
     // <number> timeout for step definitions
     timeout: 60000,
