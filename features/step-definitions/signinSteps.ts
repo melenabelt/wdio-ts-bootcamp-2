@@ -5,12 +5,10 @@ import { SigninTask } from '../tasks/signinTask';
 import {expect} from 'chai';
 
 const signinPage = new SigninPage()
+const signinPage = new SigninPage()
 const signinTask = new SigninTask()
 
-// After(async function () {
-//     await signinTask.signinHeader.moveTo();
-//     await signinTask.signoutLink.click();
-//   });
+let manualInterventionRequired = false
 
 Given(/^The user enters the Amazon homepage$/, async () => {
     await signinPage.open()
@@ -25,6 +23,9 @@ When(/^The user re-enter password and captcha$/, async () => {
 
     if (signinPage.captchaSection.isExisting()) {
         await signinPage.passwordInput.setValue("helloelena1234")
+    if (SigninPage.captchaSection.isExisting()) {
+        await SigninPage.passwordInput.setValue("helloelena1234")
+        manualInterventionRequired = true;
         await new Promise(resolve => setTimeout(resolve, 5000));
     }
 })
@@ -32,6 +33,8 @@ When(/^The user re-enter password and captcha$/, async () => {
 Then(/^The user sees Sign Out link on Account & Lists$/, async () => {
     await signinTask.signinHeader.moveTo();
     await expect(signinTask.signoutLink).exist
+    await signinTask.signinHeader.moveTo();
+    await signinTask.signoutLink.click();
     await signinTask.signinHeader.moveTo();
     await signinTask.signoutLink.click();
 })
@@ -49,11 +52,15 @@ Then(/^The user sees an error message and sign-in is not possible$/, async () =>
 When(/^The user enters the correct email and password from footer$/, async () => {
     // await signinTask.preFooterContainer.scrollIntoView()
     await signinTask.scrollToFooter();
+    // await signinTask.preFooterContainer.scrollIntoView()
+    await signinTask.scrollToFooter();
     await signinTask.clickSigninFooter();
     await signinTask.amazonSignIn("helloelenacorrea@gmail.com", "helloelena1234");
   })
 
 When(/^The user enters the incorrect email or password from footer$/, async () => {
+    // await signinTask.preFooterContainer.scrollIntoView()
+    await signinTask.scrollToFooter();
     // await signinTask.preFooterContainer.scrollIntoView()
     await signinTask.scrollToFooter();
     await signinTask.clickSigninFooter();
