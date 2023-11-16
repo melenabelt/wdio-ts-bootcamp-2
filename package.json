@@ -1,16 +1,28 @@
 {
   "devDependencies": {
+    "@types/chai": "^4.3.7",
+    "@wdio/allure-reporter": "^8.20.0",
     "@wdio/cli": "^8.16.20",
     "@wdio/cucumber-framework": "^8.16.19",
     "@wdio/local-runner": "^8.16.20",
     "@wdio/spec-reporter": "^8.16.17",
+    "allure-commandline": "^2.24.1",
+    "chai": "^4.3.10",
+    "chromedriver": "^119.0.0",
+    "rimraf": "^5.0.5",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "fs-extra": "^11.1.1",
     "webdriverio": "^8.16.20"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.ts"
+    "wdio": "wdio run ./wdio.conf.ts",
+    "report-open": "allure open allure-report",
+    "pretest": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs",
+    "test": "npm run pretest && npx wdio wdio.conf.ts"
   }
 }
