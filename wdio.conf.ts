@@ -1,8 +1,18 @@
 import type { Options } from "@wdio/types";
 import { browser } from '@wdio/globals'
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 
 export const config: Options.Testrunner = {
+
+  before: function () {
+    console.log(process.env.EMAIL);
+    console.log(process.env.PASSWORD);
+    
+},
+
   //
   // ====================
   // Runner Configuration

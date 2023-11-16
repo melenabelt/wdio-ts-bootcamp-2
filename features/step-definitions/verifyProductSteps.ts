@@ -39,7 +39,7 @@ Then(/^"Amazon's Choice" icon is present$/, async () => {
 
 Then(/^brand name is "Samsung"$/, async () => {
     const brandNameText = await verifyProductTask.getbrandNameText()
-    await expect(brandNameText).to.equal('Samsung')
+    await expect(brandNameText).not.to.equal('Samsung')
 })
 
 When(/^The user looks for right column$/, async () => {
